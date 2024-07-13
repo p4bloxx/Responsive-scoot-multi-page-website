@@ -48,6 +48,10 @@ h4{
   font-size: clamp(1.125rem, 0.4228rem + 2.2472vw, 1.5rem);
 }
 
+h1,h2,h3,h4{
+  font-family: 'Space Mono', sans-serif;
+}
+
 p{
   font-size: 0.9375rem;
   line-height: 1.5625rem;
