@@ -1,0 +1,224 @@
+@use 'style' as *;
+
+.intro-section{
+  display: grid;
+  place-content: center;
+  position: relative;
+  overflow: hidden;
+    img:not(.circle-hero){
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+    }
+
+    div{
+      margin-block: clamp(3.75rem, 6vw + 2.25rem, 4.5rem);
+      max-width: 69.125rem;
+      width: 100%;
+    }
+
+    .circle-hero{
+      position: absolute;
+      bottom: 4.25rem;
+      right: -$fs-32;
+    }
+
+    @media (width >= 767px) {
+      justify-content: start;
+      padding-inline-start: clamp(6.063rem, 40vw - 14.688rem, 10.313rem);
+    }
+}
+
+.wrapper-mid{
+  padding: 4.5rem clamp(2rem, 102.308vw - 42.76rem, 10.313rem) 7.5rem;
+  overflow: hidden;
+   @media (width >= 767px) and (width < 900px){
+    padding-inline: $fs-40;
+    padding-block: 9rem 7.5rem;
+   }
+   @media (width > 900px) {
+    padding-block: 7.5rem 6rem;
+   }
+}
+
+.big-circle{
+  gap: $fs-120;
+    &__item{
+      position: relative;
+    }
+
+    .first-about{
+      transform: scale(2);
+      top: 10rem;
+      left: 50%;
+    }
+
+    @media (width < 767px){
+      .s-about{
+        top: 0.5rem;
+        transform: scale(1.3);
+        left: -35%;
+      }
+    }
+    
+    @media (width > 767px){
+      .first-about{
+        transform: scale(1.8);
+        top: 17rem;
+        left: 8%;
+      }
+    }
+
+    @media (width > 1200px){
+      .first-about{
+        transform: scale(1.1);
+        top: 15rem;
+        left: 48%;
+      }
+    }
+}
+
+//To stilyze both sections, in this page and in careers
+.small-circles{
+  padding-block: $fs-120;
+  @include flex-block-center;
+  align-items: stretch;
+  gap: clamp(4rem, 20.5vw - 2.406rem, 6.563rem);
+    @media (width < 767px){
+      padding-block-end: 9.0625rem;
+    }
+
+    .small-circle{
+      width: 15rem;
+    }
+
+    &__items{
+      display: grid;
+      gap: $fs-56;
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 21.5rem), 1fr));
+    } 
+
+    &__item,
+    &__item > :first-child{
+      @include flex-block-center;
+      position: relative;
+    }
+
+    &__item{
+        h4{
+          margin-block: clamp(4rem, 11.5vw + 0.406rem, 5.438rem) $fs-27;
+        }
+        p{
+          max-width: 50ch;
+        }
+    }
+
+    @media (width > 900px){
+      &__items{
+        gap: 1.875rem;
+      }
+      p{
+        max-width: 40ch;
+      }
+    }
+
+    .yellow-circle-numb{
+      position: absolute;
+      bottom: -$fs-48;
+    }
+}
+
+.faq{
+  color: $title;
+  button{
+    color: $title;
+    text-align: left;
+  }
+  
+  h2{
+    margin-block-end: clamp(3rem, 8vw + 0.5rem, 4rem);
+  }
+
+  .chevron{
+    transition: all 0.3s ease;
+  }
+
+  .accordion{
+    .first-section{
+      margin-block-end: clamp(3rem, 8vw + 0.5rem, 4rem);
+    }
+
+    &__block{
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 25rem), auto));
+        @media (width > 1200px){
+          & > div{
+            min-width: 45.625rem;
+          }
+        }
+
+        & > h3{
+          height: fit-content;
+          width: fit-content;
+        }
+    }
+    
+
+    &__block > div > div:not(:last-child){
+      margin-block-end: $fs-16;
+        @media (width >= 767px) and (width < 900px){
+          margin-block-end: $fs-24;
+        }
+    }
+
+    &__block > h3{
+      @media (width < 1200px){
+        margin-block-end: $fs-32;
+      }
+    }
+
+    &__panel{
+      text-align: left;
+      padding: $fs-32 1.75rem $fs-32 $fs-32;
+      transition: all 0.3s ease;
+      cursor: pointer;
+        &:hover{
+          background-color: $light-accent;
+        }
+
+        & *{
+          cursor: pointer;
+        }
+        
+        & > :first-child{
+          @include flex-inline-between;
+          gap: $fs-16;
+          margin-block-end: $fs-24;
+          transition: all 0.3s ease;
+        }
+
+        & > :first-child[data-open="true"]{
+          margin-block-end: 0;
+        }
+    }
+
+    &__content {
+      display: grid;
+      grid-template-rows: 0fr;
+      transition: grid-template-rows 500ms;
+    }
+    
+    &__content[aria-hidden="false"] {
+      grid-template-rows: 1fr;
+    }
+    
+    &__content > div {
+      overflow: hidden;
+    }
+  
+    
+  }
+
+
+  
+}

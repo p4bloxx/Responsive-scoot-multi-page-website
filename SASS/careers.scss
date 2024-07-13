@@ -1,0 +1,30 @@
+@use 'style' as *;
+
+.work{
+  & > div:not(:last-child){
+    margin-block-end: clamp(1rem, 6.667vw - 2.25rem, 1.5rem);
+  }
+
+  & > div{
+    padding: 2.25rem $fs-32 $fs-32 $fs-32;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 10rem), auto));
+    gap: $fs-16;
+
+      h4{
+        margin-block-end: 0.5rem;
+      }
+
+      @media (width > 767px){
+        gap: 0;
+        justify-content: space-between;
+        text-align: left;
+        padding-inline: $fs-48;
+        padding-block-start: $fs-32;
+      }
+
+      @media (width > 900px){
+        padding-inline: $fs-40 4rem;
+      }
+  }
+}

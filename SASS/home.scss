@@ -1,0 +1,455 @@
+@use 'style' as *;
+//Header - nav-menu
+.topnav{
+  padding: 1.375rem clamp($fs-32, 5.215vw, $fs-40);
+  background-color: $txt-white;
+  position: relative;
+  z-index: 15;
+  nav{
+    position: relative;
+    max-width: 69.125rem;
+    margin-inline: auto;
+    @include flex-inline-start;
+  }
+
+  &__logo{
+    margin-inline: auto;
+      @media (width < 767px){
+        width: 4.6875rem;
+      }
+  }
+
+  @media (width >= 767px){
+    button:not(.cta){
+      display: none;
+    }
+  }
+
+  &__open[aria-expanded='true'] {
+      @media (prefers-reduced-motion) {
+        opacity: 1;
+      }
+  }
+
+  @media (width < 767px){
+    &__menu{
+      position: fixed;
+      background-color: $nav-menu;
+      inset: 0;
+      top: 4rem;
+      right: $fs-120;
+      @include flex-block-start;
+      justify-content: start;
+      gap: 21.25rem;
+      padding: 4rem $fs-32 $fs-24;
+      translate: -100vw 0;
+      transition: translate 0.5s ease;
+    }
+  }
+
+ 
+  #btnClose{
+    display: none;
+  }
+
+  &__links{
+    @include flex-block-start;
+    gap: $fs-24;
+    color: $bg-tab;
+  }
+
+  @media(width >= 767px ){
+    nav{
+        img{
+          margin-inline: initial;
+        }
+    }
+
+    &__menu{
+      @include flex-inline-between;
+      width: 100%;
+    }
+
+    &__links{
+      @include flex-inline-center;
+      gap: $fs-32;
+      color: $body-txt;
+      margin-inline: 3.625rem 0;
+    }
+  }
+ 
+}
+
+//Hero-section
+.hero-section{
+  color: $txt-white;
+  position: relative;
+  background: url('../ASSETS/images/home-hero-mobile.jpg') no-repeat center center / cover ;
+  padding: 7.1875rem clamp(2rem, -13.8457rem + 41.5625vw, 10.3125rem) 11.25rem;
+  overflow: hidden;
+  z-index: 0;
+  @include flex-block-center;
+    h1{
+      color: $txt-white;
+      max-width: 15ch;
+    }
+
+    p{
+      margin-block: $fs-24 $fs-32;
+    }
+
+    .right-arrow{
+      position: absolute;
+      bottom: $fs-32;
+      right: 65%;
+      height: 8.625rem;
+    }
+
+    .line-yellow{
+      display: none;
+      position: absolute;
+    }
+
+    @media(width >= 767px ){
+      background: url('../ASSETS/images/home-hero-tablet.jpg') no-repeat center center / cover;
+      padding-block: 8.5625rem 13.5625rem;
+      .circle-hero{
+        position: absolute;
+        bottom: clamp(2.813rem, -17.188rem + 40vw, 10.313rem);
+        height: 3.9375rem;
+        right: -$fs-32;
+      }
+
+      .right-arrow{
+        right: 60%;
+      }
+
+      .circle-hero{
+        display: block;
+      }
+    }
+
+    @media (width >= 900px){
+      background: url('../ASSETS/images/home-hero-desktop.jpg') no-repeat center center / cover;
+      padding-block: 9.5625rem;
+      text-align: left;
+      align-items: start;
+      p{
+        margin-block: $fs-40;
+        max-width: 45ch;
+      }
+
+      p,
+      button{
+        margin-inline-start: 3.5625rem;
+      }
+
+      .line-yellow{
+        display: block;
+        height: 0.8rem;
+        left: 0;
+        bottom: 18rem;
+      }
+
+      .right-arrow{
+        bottom: 10.8125rem;
+        right: 22rem;
+        left: 44.0625rem;
+      }
+    }
+}
+
+
+.wrapper{
+  padding: $fs-120 clamp(2rem, -13.8457rem + 41.5625vw, 10.3125rem);
+  overflow: hidden;
+    @media (width >= 767px){
+      padding-block-end: 6.5rem;
+    }
+
+    @media (width >= 900px){
+      padding-block: 10rem 12.5rem;
+    }
+}
+
+//Advantage
+.advantage{
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 21rem), 1fr));
+  gap: $fs-48;
+  margin-block-end: clamp(7.5rem, 18.905vw, 12.5rem); 
+
+  &__item{
+   @include flex-block-center;
+      h4{
+        margin-block: $fs-24;
+      }
+
+      img{
+        width: clamp(3.5rem, 12.516vw, 6rem);
+      }
+  }
+
+  .grey-line{
+    position: absolute;
+    left: 2.5rem;
+    top: -10.6rem;
+    width: 1rem;
+    height: 34rem;
+  }
+
+  @media (width >= 767px){
+    text-align: left;
+    gap: $fs-40;
+
+    &__item{
+      z-index: 2;
+      align-items: start;
+    }
+
+    h4{
+      margin-block: 0 $fs-27;
+    }
+  }
+
+  @media (width >=767px) and (width < 1200px){
+    &__item{
+      flex-direction: row;
+      gap: 5rem;
+    }
+  }
+
+  @media (width > 1200px){
+    gap: $fs-32;
+    h4{
+      margin-block: $fs-27;
+    }
+
+    .grey-line{
+      top: -44rem;
+      height: 94.9rem;
+      transform: rotate(90deg);
+    }
+  }
+}
+
+//Big-cirlce-home
+.big-circle{
+  @include flex-block-center;
+  gap: clamp(7.5rem, 2.143rem + 11.429vw, 10rem);
+
+  &__item{
+    position: relative;
+  }
+
+
+  .first{
+    top: 12rem;
+    right: -12rem;
+    scale: 2.3;
+  }
+
+  .second{
+    top: 0;
+    left: -9rem;
+    scale: 1.3;
+  }
+
+  .third{
+    top: 0;
+    scale: 2;
+    right: -17rem;
+    top: 2rem;
+  }
+
+  &__item{
+    @include flex-block-center;
+  }
+
+  &__content{
+    @include flex-block-center;
+    gap: $fs-32;
+    margin-block-start: 3.5rem;
+    max-width: 27.8125rem;
+  }
+
+  h2{
+    max-width: 15ch;
+  }
+
+  @media (width >= 767px){
+    .circle{
+      position: absolute;
+      top: 0;
+      right: -60vw;
+      transform: scale(0.8);
+    }
+
+    .c-left{
+      left: -60vw;
+      transform: scale(0.8);
+    }
+
+    .first{
+      top: 18rem;
+      bottom: $fs-40;
+      scale: 1.7;
+      right: -5vw;
+    }
+
+    .second{
+      top: 0;
+      left: -35vw;
+      scale: 1;
+    }
+
+    .third{
+      top: 0;
+      scale: 1.5;
+      right: -50vw;
+      top: 6rem;
+    }
+  }
+
+  @media (width > 1200px){
+    text-align: left;
+    &__item{
+      flex-direction: row;
+      align-items: stretch;
+      gap: 13.75rem;
+    }
+
+    & > div:nth-child(1),
+    & > div:nth-child(3){
+      flex-direction: row-reverse;
+    }
+
+    &__content{
+      margin-block-start: 0;
+      align-items: start;
+    }
+
+    .first{
+      scale: 1.2;
+      right: -13rem;
+    }
+
+    .second{
+      left: -17rem;
+    }
+
+    .third{
+      scale: 1;
+      right: -35rem;
+    }
+
+    .circle{
+      right: -33vw;
+    }
+
+    .c-left{
+      left: -33vw;
+    }
+  }
+}
+
+//Signup
+.signup{
+  padding: clamp(5.5rem, 3.625rem + 4vw, 6.375rem) $fs-32;
+  background-image: url('../ASSETS/patterns/semi-circles.svg');
+  background-repeat: no-repeat;
+  background-position: right -13rem bottom;
+  background-size: 80rem;
+  
+  button{
+    cursor: pointer;
+  }
+    .content{
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 25rem), 1fr));
+      justify-items: center;
+      gap: clamp(2.5rem, 10vw, 15rem);
+    }
+
+    h2{
+      max-width: 16ch;
+     }
+
+    &__app{
+      @include flex-inline-center;
+      gap: 0.75rem;
+      margin-inline: auto;
+    }
+    @media (width >= 767px) and (width <= 900px) {
+      padding-block: 3.875rem;
+    }
+
+    @media (width > 900px){
+      & > div{
+        @include flex-inline-center;
+      }
+      text-align: left;
+    }
+}
+
+//Footer
+.footer{
+  padding-block: 4.0625rem  5.5rem;
+  .content{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 25rem), 1fr));
+    justify-items: center;
+    max-width: min(100% - 5rem, 69.125rem);
+    margin-inline: auto;
+  }
+
+  &__links{
+    margin-block: $fs-40 5.3125rem;
+    & li:not(:last-child){
+      margin-block-end: $fs-16;
+    }
+  }
+
+  @media(width > 1000px){
+    padding-block: $fs-32;
+
+    &__menu,
+    &__links{
+      @include flex-inline-center;
+    }
+
+    &__menu{
+      gap: 3.625rem;
+      justify-self: flex-start;
+    }
+
+    &__links{
+      gap: $fs-32;
+      margin-block: 0;
+      & li:not(:last-child){
+        margin-block-end: 0;
+      }
+    }
+
+    &__social{
+      justify-self: flex-end;
+    }
+
+  }
+
+  &__social{
+    @include flex-inline-center;
+    gap: $fs-24;
+  }
+}
+
+.black-screen{
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  opacity: 0;
+  transition: all 0.3s ease;
+  pointer-events: none;
+  z-index: 10;
+}

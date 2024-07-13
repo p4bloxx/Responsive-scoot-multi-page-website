@@ -1,0 +1,163 @@
+@use 'variables and mixins' as *;
+
+//Utiliy class
+.ff-mono{
+  font-family: $ff-mono;
+}
+
+.ff-deca{
+  font-family: $ff-deca;
+}
+
+.white-txt{
+  color: $txt-white;
+}
+
+.bg-white{
+  background-color: $txt-white;
+}
+
+.txt-accent{
+  color: $accent;
+}
+
+.bg-accent{
+  background-color: $accent;
+}
+
+.bg-light-accent{
+  background-color: $light-accent;
+}
+
+.txt-body{
+  color: $body-txt;
+}
+
+.title{
+  color: $title;
+}
+
+.bg-title{
+  background-color: $title;
+}
+
+.bg-tab{
+  background-color: $bg-tab;
+}
+
+.bg-decoration{
+  background-color: $grey-decoration;
+}
+
+.bg-tab-city{
+  background-color: $tab-city;
+}
+
+.nav-menu{
+  background-color: $nav-menu;
+}
+
+.to-circle{
+  border-radius: 100vmax;
+}
+
+//To set a global style to all sections inside main
+.content{
+  max-width: 69.125rem;
+  margin-inline: auto;
+}
+
+.cta{
+  color: $txt-white;
+  background-color: $accent;
+  padding: 0.875rem 2.6875rem;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+  font-family: $ff-mono;
+  text-wrap: nowrap;
+  cursor: pointer;
+    &:hover{
+      border-color: $accent;
+      background-color: transparent;
+      color: $accent;
+    }
+}
+
+.grey-line{
+    @media (width < 767px){
+      display: none;
+    }
+}
+
+.topnav__item a,
+.footer__item a{
+  transition: all 0.3s ease;
+    &:hover{
+      color: $accent;
+    }
+}
+
+.social-icon,
+.social-icon path{
+  transition: all 0.3s ease;
+    &:hover path{
+      fill: $txt-white;
+    }
+}
+
+.yellow-circle-numb{
+  background-color: $accent;
+  color: $title;
+  width: 6rem;
+  height: 6rem;
+  border-radius: 50%;
+  display: grid;
+  place-content: center;
+}
+
+//Big grey circle
+@media (width < 767px){
+  .circle{
+    display: none;
+  }
+
+  .circle-hero{
+    display: none;
+  }
+}
+
+.arrow{
+  position: absolute;
+  z-index: 5;
+}
+
+/*screen-readers only*/
+.sr-only {
+  position: absolute; 
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px; 
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap; /* added line */
+  border: 0;
+}
+body{
+  position: relative;
+}
+
+.skip-btn{
+  padding: .5rem 1rem;
+  transition: all 0.2s ease;
+  position: absolute;
+  top: 1rem;
+  left: 2rem;
+  transform: translateY(-150%);
+  z-index: 100;
+  background-color: $title;
+  color: $txt-white;
+    &:focus{
+      transform: translateY(0);
+    }
+}

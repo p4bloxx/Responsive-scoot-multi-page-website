@@ -1,0 +1,62 @@
+@use '../util\ folders/' as *;
+
+//Variables
+//Colors
+$txt-white: rgb(255, 255, 255);
+$bg-tab: rgb(242, 245, 249);
+$grey-decoration: rgb(229, 236, 244);
+$body-txt: rgb(147, 156, 170);
+$title: rgb(73, 85, 103);
+$nav-menu: rgb(51, 58, 68);
+$tab-city: rgb(255, 244, 223);
+$accent: rgb(252, 183, 43);
+$light-accent: rgb(255, 244, 223);
+$ff-mono: 'Space Mono', sans-serif;
+$ff-deca: 'Lexend Deca', sans-serif;
+
+//Sizes
+$fs-13: 0.8125rem;
+$fs-15: 0.9375rem;
+$fs-16: 1rem;
+$fs-18: 1.125rem;
+$fs-24: 1.5rem;
+$fs-27: 1.6875rem;
+$fs-30: 1.875rem;
+$fs-32: 2rem;
+$fs-40: 2.5rem;
+$fs-48: 3rem;
+$fs-56: 3.5rem;
+$fs-64: 4rem;
+$fs-72: 4.5rem;
+$fs-88: 5.5rem;
+$fs-120: 7.5rem;
+$fs-144: 9rem;
+
+//Mixins
+@mixin flex-inline-start{
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  flex-direction: row;
+}
+
+@mixin flex-inline-center{
+  @include flex-inline-start;
+  justify-content: center;
+}
+
+@mixin flex-inline-between{
+  @include flex-inline-start;
+  justify-content: space-between;
+}
+
+@mixin flex-block-center{
+  @include flex-inline-start;
+  flex-direction: column;
+  justify-content: center
+}
+
+@mixin flex-block-start{
+  @include flex-block-center;
+  align-items: start;
+}

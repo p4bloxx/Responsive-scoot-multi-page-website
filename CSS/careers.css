@@ -1,0 +1,358 @@
+@font-face {
+  font-family: "Space Mono";
+  font-weight: 700;
+  src: local("Space Mono bold"), url("../ASSETS/typeface/Space_Mono/SpaceMono-Bold.woff") format("woff"), url("../ASSETS/typeface/Space_Mono/SpaceMono-Bold.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Lexend Deca";
+  font-weight: 400;
+  src: local("Lexend Deca regular"), url("../ASSETS/typeface/Lexend_Deca/LexendDeca-Regular.woff") format("woff"), url("../ASSETS/typeface/Lexend_Deca/LexendDeca-Regular.woff2") format("woff2");
+}
+h1 {
+  font-size: clamp(2.5rem, 8vw + 0rem, 3.5rem);
+  line-height: 100%;
+  letter-spacing: -0.15625rem;
+}
+
+h2 {
+  font-size: clamp(2rem, 8vw - 0.5rem, 3rem);
+  line-height: 100%;
+  letter-spacing: -0.13375rem;
+}
+
+h3 {
+  font-size: clamp(1.5rem, -0.3727rem + 5.9925vw, 2.5rem);
+  line-height: 120%;
+  letter-spacing: -0.111875rem;
+}
+
+h4 {
+  font-size: 1.5rem;
+  line-height: 120%;
+  letter-spacing: -0.066875rem;
+}
+
+.h4-big {
+  font-size: clamp(1.5rem, -0.3727rem + 5.9925vw, 2.5rem);
+}
+
+.h4-small {
+  font-size: clamp(1.125rem, 0.4228rem + 2.2472vw, 1.5rem);
+}
+
+p {
+  font-size: 0.9375rem;
+  line-height: 1.5625rem;
+  font-family: "Lexend Deca", sans-serif;
+}
+
+@media (width < 767px) {
+  h1 {
+    letter-spacing: -0.111875rem;
+  }
+  h2 {
+    letter-spacing: -0.089375rem;
+  }
+  h3 {
+    letter-spacing: -0.066875rem;
+  }
+}
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body, h1, h2, h3, h4, p,
+figure, blockquote, dl, dd, ul, li, button, input {
+  margin: 0;
+  padding: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul,
+ol {
+  list-style: none;
+}
+
+button {
+  background: none;
+  border: none;
+  display: block;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+  position: relative;
+  font-weight: 400;
+  font-family: "Lexend Deca", sans-serif;
+  text-align: center;
+  color: rgb(147, 156, 170);
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1, h2, h3, h4,
+button, input, label {
+  line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+h1, h2,
+h3, h4 {
+  text-wrap: auto;
+  font-family: "Space Mono", sans-serif;
+  color: rgb(73, 85, 103);
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  display: inline-block;
+}
+
+dialog {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+picture img {
+  width: 100%;
+}
+
+/* Inherit fonts for inputs and buttons */
+input, button,
+textarea, select {
+  font: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 5ex;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition-duration: 0s !important;
+  }
+}
+.ff-mono {
+  font-family: "Space Mono", sans-serif;
+}
+
+.ff-deca {
+  font-family: "Lexend Deca", sans-serif;
+}
+
+.white-txt {
+  color: rgb(255, 255, 255);
+}
+
+.bg-white {
+  background-color: rgb(255, 255, 255);
+}
+
+.txt-accent {
+  color: rgb(252, 183, 43);
+}
+
+.bg-accent {
+  background-color: rgb(252, 183, 43);
+}
+
+.bg-light-accent {
+  background-color: rgb(255, 244, 223);
+}
+
+.txt-body {
+  color: rgb(147, 156, 170);
+}
+
+.title {
+  color: rgb(73, 85, 103);
+}
+
+.bg-title {
+  background-color: rgb(73, 85, 103);
+}
+
+.bg-tab {
+  background-color: rgb(242, 245, 249);
+}
+
+.bg-decoration {
+  background-color: rgb(229, 236, 244);
+}
+
+.bg-tab-city {
+  background-color: rgb(255, 244, 223);
+}
+
+.nav-menu {
+  background-color: rgb(51, 58, 68);
+}
+
+.to-circle {
+  border-radius: 100vmax;
+}
+
+.content {
+  max-width: 69.125rem;
+  margin-inline: auto;
+}
+
+.cta {
+  color: rgb(255, 255, 255);
+  background-color: rgb(252, 183, 43);
+  padding: 0.875rem 2.6875rem;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+  font-family: "Space Mono", sans-serif;
+  text-wrap: nowrap;
+  cursor: pointer;
+}
+.cta:hover {
+  border-color: rgb(252, 183, 43);
+  background-color: transparent;
+  color: rgb(252, 183, 43);
+}
+
+@media (width < 767px) {
+  .grey-line {
+    display: none;
+  }
+}
+
+.topnav__item a,
+.footer__item a {
+  transition: all 0.3s ease;
+}
+.topnav__item a:hover,
+.footer__item a:hover {
+  color: rgb(252, 183, 43);
+}
+
+.social-icon,
+.social-icon path {
+  transition: all 0.3s ease;
+}
+.social-icon:hover path,
+.social-icon path:hover path {
+  fill: rgb(255, 255, 255);
+}
+
+.yellow-circle-numb {
+  background-color: rgb(252, 183, 43);
+  color: rgb(73, 85, 103);
+  width: 6rem;
+  height: 6rem;
+  border-radius: 50%;
+  display: grid;
+  place-content: center;
+}
+
+@media (width < 767px) {
+  .circle {
+    display: none;
+  }
+  .circle-hero {
+    display: none;
+  }
+}
+.arrow {
+  position: absolute;
+  z-index: 5;
+}
+
+/*screen-readers only*/
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap; /* added line */
+  border: 0;
+}
+
+body {
+  position: relative;
+}
+
+.skip-btn {
+  padding: 0.5rem 1rem;
+  transition: all 0.2s ease;
+  position: absolute;
+  top: 1rem;
+  left: 2rem;
+  transform: translateY(-150%);
+  z-index: 100;
+  background-color: rgb(73, 85, 103);
+  color: rgb(255, 255, 255);
+}
+.skip-btn:focus {
+  transform: translateY(0);
+}
+
+.work > div:not(:last-child) {
+  margin-block-end: clamp(1rem, 6.667vw - 2.25rem, 1.5rem);
+}
+.work > div {
+  padding: 2.25rem 2rem 2rem 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 10rem), auto));
+  gap: 1rem;
+}
+.work > div h4 {
+  margin-block-end: 0.5rem;
+}
+@media (width > 767px) {
+  .work > div {
+    gap: 0;
+    justify-content: space-between;
+    text-align: left;
+    padding-inline: 3rem;
+    padding-block-start: 2rem;
+  }
+}
+@media (width > 900px) {
+  .work > div {
+    padding-inline: 2.5rem 4rem;
+  }
+}
+
+/*# sourceMappingURL=careers.css.map */
